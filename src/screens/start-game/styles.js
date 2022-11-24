@@ -19,10 +19,11 @@ export const styles = StyleSheet.create ({
         textAlign: 'center',
     },
     inputContainer: {
+        width: '80%',
         justifyContent: 'center',
         alignContent: 'center',
         marginHorizontal: 20,
-
+        paddingVertical: 20,
     },
     input: {
         borderBottomColor: '#c3c388',

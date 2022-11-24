@@ -9,9 +9,10 @@ export const styles = StyleSheet.create ({
         paddingTop: 20,
     },
     title: {
-        fontSize: 22,
+        fontSize: 25,
         color: '#ffffff',
         fontWeight: 'bold',
         fontFamily: '',
+        paddingVertical: 25,
     }
 });

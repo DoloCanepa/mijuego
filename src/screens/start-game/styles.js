@@ -14,15 +14,15 @@ export const styles = StyleSheet.create ({
     },
     label: {
         fontSize: 15,
-        color: '#c3c388',
+        color: '#aaaa55',
         paddingVertical: 5,
         textAlign: 'center',
     },
     inputContainer: {
-        width: '80%',
         justifyContent: 'center',
         alignContent: 'center',
         marginHorizontal: 20,
+        paddingVertical: 20,
         paddingVertical: 20,
     },
     input: {
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create ({
     },
     buttonContainer: {
         flexDirection: 'row',
-        width: '70%',
+        width: '80%',
         justifyContent: 'space-around',
         marginTop: 20,
     },

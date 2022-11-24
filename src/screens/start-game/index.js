@@ -1,31 +1,52 @@
 import React from "react";
-import { View, Text, TextInput, Button } from "react-native";
+import { View, Text, Button, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { styles } from "./styles";
-import { Card } from "../../components";
+import { Card, Input } from "../../components";
+import colors from "../../constants/colors";
+import { useState } from "react";
 
 
 const StartGame = () => {
+    const [number, setNumber] = useState('');
+
+    const onHandleChange = (value) => {
+        setNumber(value.replace(/[^0-9]/g, ''));
+    }
     return (
+    <TouchableWithoutFeedback onPress={() => {
+            Keyboard.dismiss();
+                }}>
         <View style={styles.container}>
          <Text style={styles.title}>Let's start</Text> 
          <Card style={styles.inputContainer}>
              <Text style={styles.label}>Select a number</Text> 
-             <TextInput style={styles.input} placeholder="0"/>
+             <Input 
+                  style={styles.input} 
+                  placeholder="0"
+                  maxLength={2}
+                  keyboardType="number-pad"
+                  blurOnSubmit
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  onChangeText={onHandleChange}
+                  value={number}
+                />
            
             <View style={styles.buttonContainer}> 
               <Button 
                 title="Reset"
                 onPress={() => null}
-                color='#c3c388'
+                color={colors.primary}
                />
                 <Button 
                 title="Confirm"
                 onPress={() => null}
-                color='#c3c388'
+                color={colors.primary}
                />
              </View>
              </Card> 
          </View>
+        </TouchableWithoutFeedback>
     );
 } 
 

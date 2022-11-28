@@ -20,11 +20,12 @@ export const styles = StyleSheet.create ({
         textAlign: 'center',
     },
     inputContainer: {
+        width: '80%',
         justifyContent: 'center',
         alignContent: 'center',
         marginHorizontal: 20,
         paddingVertical: 20,
-        paddingVertical: 20,
+       
     },
     input: {
         minWidth: 70,
@@ -34,8 +35,21 @@ export const styles = StyleSheet.create ({
     },
     buttonContainer: {
         flexDirection: 'row',
-        width: '80%',
+        width: '95%',
         justifyContent: 'space-around',
         marginTop: 20,
     },
+    confirmedContainer: {
+        widht: '95%',
+        height: 180,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginVertical: 20,
+
+    },
+    confirmedTitle: {
+        fontSize: 16,
+       
+    },
+  
 });

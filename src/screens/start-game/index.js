@@ -1,17 +1,49 @@
 import React from "react";
-import { View, Text, Button, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { View, Text, Button, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
 import { styles } from "./styles";
-import { Card, Input } from "../../components";
+import { Card, Input, NumberContainer } from "../../components";
 import colors from "../../constants/colors";
 import { useState } from "react";
 
 
 const StartGame = () => {
     const [number, setNumber] = useState('');
+    const [selectedNumber, setSelectedNumber] = useState(null);
+    const [confirmed, setConfirmed] = useState(false);
+
 
     const onHandleChange = (value) => {
         setNumber(value.replace(/[^0-9]/g, ''));
     }
+    const onHandleReset = () => {
+        setNumber('');
+        setConfirmed(false);
+    }
+    const onHandleConfirm = () => {
+         const chosenNumber = parseInt(number, 10);
+         if(isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+            Alert.alert('Invalid Number', 'Number has to be between 1 and 99', [{text: 'Okay', style: 'destructive', onPress: onHandleReset}]);
+    }    else {
+            setConfirmed(true);
+            setSelectedNumber(chosenNumber);
+            setNumber('');
+        }
+    }
+    const onHandleStartGame = () => {}
+
+    const confirmedOutput = () => confirmed ? (
+        <Card style={styles.confirmedContainer}>
+            <Text style={styles.confirmedTitle}>Your selected number</Text>
+            <NumberContainer number={selectedNumber}/> 
+            
+            <Button 
+                title="Start Game"
+                onPress={onHandleStartGame}
+                color={colors.primary}
+            />
+        </Card>
+    ) : null;
+
     return (
     <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
@@ -35,16 +67,17 @@ const StartGame = () => {
             <View style={styles.buttonContainer}> 
               <Button 
                 title="Reset"
-                onPress={() => null}
+                onPress={onHandleReset}
                 color={colors.primary}
                />
                 <Button 
                 title="Confirm"
-                onPress={() => null}
+                onPress={onHandleConfirm}
                 color={colors.primary}
                />
              </View>
              </Card> 
+             {confirmedOutput()}
          </View>
         </TouchableWithoutFeedback>
     );

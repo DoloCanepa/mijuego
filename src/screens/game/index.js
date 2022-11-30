@@ -1,13 +1,47 @@
-import React, { useState, useRef, useEffect} from "react";
-import { View, Text } from 'react-native';
+import React, { useState } from "react";
+import { View, Text, Button } from 'react-native';
+import { Card, NumberContainer } from "../../components";
+import colors from "../../constants/colors";
 import { styles } from './styles';
 
 
 
-const Game = () => {
+const generateRandomNumber = (min, max, exclude) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    const randomNumber = Math.floor(Math.random() * (max - min) + min);
+    if(randomNumber === exclude) {
+        return generateRandomNumber(min, max, exclude);
+    } else {
+        return randomNumber;
+    }
+}
+
+
+
+const Game = (selectedNumber) => {
+    const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1, 100, selectedNumber));
+    const [rounds, setRound] = useState(0);
+
     return (
         <View style={styles.container}>
-               <Text>Game Screnn</Text>
+               <Card style={styles.content}>
+               <Text style={styles.title}>Oppoent's Number</Text>
+               <NumberContainer number={currentGuess} />
+               <View style={styles.containerButton}>
+                    <Button
+                        title="lower" 
+                        onPress={() => onHandleNextGuess('lower')}
+                        color={colors.secondary}
+                    />
+                    <Button
+                        title="greater"
+                        onPress={() => onHandleNextGuess('greater')}
+                        color={colors.primary}
+                    />
+                </View>
+
+               </Card>
         </View>   
     )
 

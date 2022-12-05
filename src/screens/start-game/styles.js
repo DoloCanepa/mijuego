@@ -2,6 +2,9 @@ import { StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 
 export const styles = StyleSheet.create ({
+    containerScroll: {
+        flex: 1,
+    },
     container: {
         flex: 1,
         alignItems: 'center',
@@ -22,7 +25,7 @@ export const styles = StyleSheet.create ({
         fontFamily: 'Lato-Regular',
     },
     inputContainer: {
-        width: '80%',
+        width: '90%',
         justifyContent: 'center',
         alignContent: 'center',
         marginHorizontal: 20,
@@ -43,7 +46,7 @@ export const styles = StyleSheet.create ({
         fontFamily: 'Lato-Regular',
     },
     confirmedContainer: {
-        widht: '95%',
+        widht: '90%',
         height: 180,
         justifyContent: 'space-around',
         alignItems: 'center',

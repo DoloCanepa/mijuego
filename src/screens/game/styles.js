@@ -10,8 +10,8 @@ export const styles = StyleSheet.create ({
        alignItems: 'center',
    },
    content: {
-       width: '70%',
-       height: height * 0.23,
+       width: '90%',
+       height: height * 0.22,
        minHeight: 200,
        alignItems: 'center',
        justifyContent: 'space-around',
@@ -24,6 +24,6 @@ export const styles = StyleSheet.create ({
        width: '100%',
        flexDirection: 'row',
        justifyContent: 'space-around',
-       fontFamily: 'Lato-Bold',
+       
    },
 });

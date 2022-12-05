@@ -48,6 +48,7 @@ const StartGame = ({onStartGame}) => {
     <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
                 }}>
+      <ScrollView style={styles.containerScroll}>            
         <View style={styles.container}>
          <Text style={styles.title}>Let's start</Text> 
          <Card style={styles.inputContainer}>
@@ -66,12 +67,12 @@ const StartGame = ({onStartGame}) => {
            
             <View style={styles.buttonContainer}> 
               <Button 
-                title="Reset"
+                title="RESTART"
                 onPress={onHandleReset}
                 color={colors.primary}
                />
                 <Button 
-                title="Confirm"
+                title="CONFIRM"
                 onPress={onHandleConfirm}
                 color={colors.primary}
                />
@@ -79,7 +80,8 @@ const StartGame = ({onStartGame}) => {
              </Card> 
              {confirmedOutput()}
          </View>
-        </TouchableWithoutFeedback>
+         </ScrollView>  
+      </TouchableWithoutFeedback>
     );
 } 
 

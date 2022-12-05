@@ -15,7 +15,7 @@ export const styles = StyleSheet.create ({
     },
     number: {
         fontSize: 20,
-        fontWeight: 'center',
+        fontFamily: 'Lato-BlackItalic',
        
     },    
 });

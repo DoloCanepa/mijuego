@@ -12,8 +12,7 @@ export const styles = StyleSheet.create ({
     title: {
         fontSize: 25,
         color: colors.text,
-        fontWeight: 'bold',
-        fontFamily: '',
+        fontFamily: 'Lato-BlackItalic',
         paddingVertical: 25,
     }
 });

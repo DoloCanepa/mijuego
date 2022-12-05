@@ -1,12 +1,12 @@
-import React from "react";
-import { View, Text, Button, TouchableWithoutFeedback, Keyboard, Alert } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Button, TouchableWithoutFeedback, Keyboard, Alert, ScrollView, KeyboardAvoidingView, Platform } from "react-native";
 import { styles } from "./styles";
 import { Card, Input, NumberContainer } from "../../components";
 import colors from "../../constants/colors";
-import { useState } from "react";
 
 
-const StartGame = (onStartGame) => {
+
+const StartGame = ({onStartGame}) => {
     const [number, setNumber] = useState('');
     const [selectedNumber, setSelectedNumber] = useState(null);
     const [confirmed, setConfirmed] = useState(false);

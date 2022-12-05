@@ -12,12 +12,14 @@ export const styles = StyleSheet.create ({
         color: colors.text,
         textAlign: 'center',
         paddingVertical: 20,
+        fontFamily: 'Lato-Regular',
     },
     label: {
         fontSize: 20,
         color: colors.secundary,
         paddingVertical: 5,
         textAlign: 'center',
+        fontFamily: 'Lato-Regular',
     },
     inputContainer: {
         width: '80%',
@@ -38,6 +40,7 @@ export const styles = StyleSheet.create ({
         width: '95%',
         justifyContent: 'space-around',
         marginTop: 20,
+        fontFamily: 'Lato-Regular',
     },
     confirmedContainer: {
         widht: '95%',
@@ -49,6 +52,7 @@ export const styles = StyleSheet.create ({
     },
     confirmedTitle: {
         fontSize: 16,
+        fontFamily: 'Lato-Regular',
        
     },
   

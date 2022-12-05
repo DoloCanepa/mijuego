@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import colors from "../../constants/colors";
 
 const { height, width } = Dimensions.get('window');
@@ -18,10 +18,12 @@ export const styles = StyleSheet.create ({
    },
    title: {
        fontSize: 16,
+       fontFamily: 'Lato-Bold',
    },
    containerButton: {
        width: '100%',
        flexDirection: 'row',
        justifyContent: 'space-around',
+       fontFamily: 'Lato-Bold',
    },
 });

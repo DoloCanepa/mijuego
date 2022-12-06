@@ -25,6 +25,8 @@ export default function App() {
     setGuessRounds(rounds);
   }
 
+  StatusBar.currentHeight
+
   const onRestart = (rounds) => {
     setUserNumber(null);
     setGuessRounds(0);

@@ -45,7 +45,8 @@ const StartGame = ({onStartGame}) => {
     ) : null;
 
     return (
-    <TouchableWithoutFeedback onPress={() => {
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'height' : 'padding'} style={styles.containerScroll}>
+         <TouchableWithoutFeedback onPress={() => {
             Keyboard.dismiss();
                 }}>
       <ScrollView style={styles.containerScroll}>            
@@ -81,7 +82,8 @@ const StartGame = ({onStartGame}) => {
              {confirmedOutput()}
          </View>
          </ScrollView>  
-      </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     );
 } 
 
